@@ -1,0 +1,52 @@
+{
+  "name": "ts-fs",
+  "version": "0.1.0",
+  "description": "Light promisified wrapper for FS module with detailed types for TypeScript",
+  "author": "Andrey Avol Volynkin <code@m18.ru>",
+  "license": "MIT",
+  "homepage": "https://github.com/m18ru/ts-fs#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m18ru/ts-fs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/m18ru/ts-fs/issues"
+  },
+  "keywords": [
+    "fs",
+    "file",
+    "system",
+    "promise",
+    "promisify",
+    "promisified",
+    "types",
+    "typescript",
+    "light",
+    "simple"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "test": "npm run lint",
+    "lint:scripts-project": "tslint -c tslint-type-check.json -p tsconfig.json --type-check",
+    "lint:scripts-other": "tslint \"{*.js,src/*.d.ts,test/*.ts}\"",
+    "lint": "npm run lint:scripts-project && npm run lint:scripts-other",
+    "clean": "rimraf lib",
+    "build": "tsc",
+    "prepublishOnly": "npm run test",
+    "prepare": "npm run clean && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.28",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.7.0",
+    "tslint-config-m18": "^1.6.2",
+    "typescript": "^2.5.2"
+  },
+  "dependencies": {
+    "ts-pfy": "^1.0.0"
+  }
+}
